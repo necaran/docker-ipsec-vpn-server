@@ -28,7 +28,7 @@ RUN set -x \
     && tar xzf libreswan.tar.gz \
     && rm -f libreswan.tar.gz \
     && cd "libreswan-${SWAN_VER}" \
-    && printf 'WERROR_CFLAGS=-w -s\nUSE_DNSSEC=false\nUSE_DH2=true\n' > Makefile.inc.local \
+    && printf 'WERROR_CFLAGS=-w -s\nUSE_DNSSEC=false\n' > Makefile.inc.local \
     && printf 'FINALNSSDIR=/etc/ipsec.d\nNSSDIR=/etc/ipsec.d\n' >> Makefile.inc.local \
     && make -s base \
     && make -s install-base \

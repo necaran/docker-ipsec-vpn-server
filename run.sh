@@ -195,6 +195,12 @@ if [ -n "$VPN_ENABLE_MODP1024" ]; then
   VPN_ENABLE_MODP1024=$(nospaces "$VPN_ENABLE_MODP1024")
   VPN_ENABLE_MODP1024=$(noquotes "$VPN_ENABLE_MODP1024")
 fi
+case $VPN_ENABLE_MODP1024 in
+  [yY][eE][sS])
+    echo "Warning: VPN_ENABLE_MODP1024 is no longer supported and will be ignored." >&2
+    echo "         Remove it from your 'env' file and use IKEv2 for affected Android clients." >&2
+    ;;
+esac
 if [ -n "$VPN_ENABLE_MODP1536" ]; then
   VPN_ENABLE_MODP1536=$(nospaces "$VPN_ENABLE_MODP1536")
   VPN_ENABLE_MODP1536=$(noquotes "$VPN_ENABLE_MODP1536")
@@ -372,20 +378,12 @@ case $VPN_IKEV2_ONLY in
     ;;
 esac
 ike_algs="aes256-sha2;modp2048,aes128-sha2;modp2048,aes256-sha1;modp2048,aes128-sha1;modp2048"
-ike_algs_addl_1=",aes256-sha2;modp1024,aes128-sha1;modp1024"
-ike_algs_addl_2=",aes256-sha2;modp1536,aes128-sha1;modp1536"
-case $VPN_ENABLE_MODP1024 in
-  [yY][eE][sS])
-    echo
-    echo "Enabling modp1024 in ipsec.conf..."
-    ike_algs="$ike_algs$ike_algs_addl_1"
-    ;;
-esac
+ike_algs_addl=",aes256-sha2;modp1536,aes128-sha1;modp1536"
 case $VPN_ENABLE_MODP1536 in
   [yY][eE][sS])
     echo
     echo "Enabling modp1536 in ipsec.conf..."
-    ike_algs="$ike_algs$ike_algs_addl_2"
+    ike_algs="$ike_algs$ike_algs_addl"
     ;;
 esac
 
