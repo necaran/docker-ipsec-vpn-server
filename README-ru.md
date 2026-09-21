@@ -26,7 +26,7 @@ IPsec VPN шифрует сетевой трафик, поэтому никто 
 - VPN: [IPsec без Docker](https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-ru.md), [WireGuard](https://github.com/hwdsl2/docker-wireguard/blob/main/README-ru.md), [OpenVPN](https://github.com/hwdsl2/docker-openvpn/blob/main/README-ru.md), [Headscale](https://github.com/hwdsl2/docker-headscale/blob/main/README-ru.md)
 - AI: [Стек ИИ на своём сервере](https://github.com/hwdsl2/self-hosted-ai-stack/blob/main/README-ru.md) для локальных LLM, чата, RAG, голосовых функций и инструментов ИИ
 
-> 📘 Хотите развернуть ИИ на собственном сервере? [The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon): **Электронная книга за $0.99/£0.99 до 20 сентября включительно** (США/Великобритания). Практическое руководство по созданию, защите и эксплуатации собственного приватного ИИ-стека.
+> 📘 Хотите развернуть ИИ на собственном сервере? [The Self-Hosted AI Builder’s Guide](https://books2read.com/aiguide?store=amazon): практическое руководство по созданию, защите и эксплуатации собственного приватного ИИ-стека.
 
 ## Быстрый старт
 
